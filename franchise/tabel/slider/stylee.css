@@ -1,0 +1,64 @@
+.clients-bg {
+  background-image: url(../images/bg_3.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.clients-bg .bg-overlay {
+  background: #f1fbff;
+  opacity: 1;
+}
+.clients-bg .heading-main {
+  color: #ff3514;
+}
+
+.clients-bg .heading-main {
+  margin-bottom: 30px;
+}
+h1:not(.site-title):before,
+h2#swal2-title:before {
+  content: "" !important;
+  height: 0;
+}
+carousel.owl-loaded {
+  display: block;
+}
+.owl-carousel {
+  display: none;
+  width: 100%;
+  z-index: 1;
+}
+.owl-carousel,
+.owl-carousel .owl-item {
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  touch-action: manipulation;
+  -moz-backface-visibility: hidden;
+}
+.clients-bg .owl-carousel .owl-item {
+  text-align: center;
+}
+.clients-bg .item {
+  background: transparent;
+  max-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  height: 150px;
+}
+.clients-bg .owl-carousel .owl-item img {
+  max-height: 150px;
+}
+.clients-bg .owl-carousel .owl-item img {
+  display: inline-block;
+  width: auto;
+}

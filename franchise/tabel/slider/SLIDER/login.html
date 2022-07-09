@@ -1,0 +1,93 @@
+<app-loader *ngIf="submitted"></app-loader>
+
+
+<div class="card-no-border">
+    <section id="wrapper">
+
+        <div class="navbar-header inline-block">
+            <a class="navbar-brand" routerLink='' style="cursor :pointer">
+                <b>
+                    <img src="../assets/images/mecbot.png" alt="homepage" class="dark-logo">
+                </b>
+            </a>
+        </div>
+
+
+
+        <div class="row logo-img">
+            <div class="col-12 text-center">
+                <img src="../../../../assets/images/login-robo/robot-login.png" style="width: 100px;">
+            </div>
+            <div class="col-12 text-center">
+                <h3 style="color: #ff8500;font-weight: 600;"> Welcome to Mechatron Robotics </h3>
+            </div>
+        </div>
+
+        <div class="login-register">
+            <div class="login-box card shadow">
+                <div class="card-body">
+                    <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+                    <form class="form-horizontal form-material" [formGroup]="loginForm" (ngSubmit)="onSubmit()"
+                        id="loginform">
+                        <div class="col-md-12 col-sm-12 text-center">
+                            <h3 style="color: #ff8500;">Login</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 text-center">
+                            <span style="color: #363636;"> To access Mechatron Robotics Portal </span>
+                        </div>
+
+                        <div class="form-group  has-danger" style="margin-top: 13px;">
+                            <div class="col-md-12 col-sm-12">
+
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Enter your email</mat-label>
+                                    <input matInput formControlName="email" required="">
+                                    <mat-icon mat-icon-button matSuffix>email</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="submitted && f.email.errors" class="form-control-feedback">
+                                <div *ngIf="f.email.errors.required">email is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group  has-danger" style="margin-top: 10px;">
+                            <div class="col-md-12 col-sm-12">
+
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Enter your password</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"
+                                        required="">
+                                    <mat-icon mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">{{hide ?
+                                        'visibility_off' : 'visibility'}}</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="submitted && f.password.errors" class="form-control-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center" style="margin-top: 30px;">
+                            <div class="col-md-12 col-sm-12 p-b-20">
+                                <button class="btn btn-block btn-lg btn-success login-btn" [disabled]="!loginForm.valid"
+                                    type="submit" style="height: 50px;">Log In</button>
+                            </div>
+                        </div>
+                        <hr style="margin-top: 0.5rem; margin-bottom: 0.5rem;" />
+                        <div class="form-group m-b-0">
+                            <div class="col-sm-12 text-center">
+                                <a routerLink="/forget-password" class="text-info m-l-5"><b
+                                        style="cursor: pointer; color:#0000EE; font-size: 12px;">I forgot my user
+                                        ID/Password?</b></a>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+</div>

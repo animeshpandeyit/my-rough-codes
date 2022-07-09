@@ -1,0 +1,996 @@
+<app-loader *ngIf="loader"></app-loader>
+<div class="hero-image">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 top-margin-top">
+                <div class="d-flex flex-column" style="margin-top: 55px !important">
+                    <p class="p-head">
+                        <span class="head-text-blue">{{centerData?.name}}</span><br />
+                        <span class="head-text-org">Enhance <span style="font-weight: 600;">your</span> Creativity <span
+                                style="font-weight: 600;">With</span>&nbsp;
+                            <span class="org-text">Mechatron Robotics</span> </span><br />
+
+                        <span class="head-text-black"> BASIC TO EXPERT LEVEL OF TRAINING</span>
+                    </p>
+                    <div style="margin-top: 20px">
+                        <a routerLink="/courses">
+                            <button type="button" class="buttonaction-course">EXPLORE NOW</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 top-margin-top backImage">
+                <img *ngIf="centerData?.images[0]" [src]="getCourseImage(centerData.images[0])" alt="banner-child"
+                    class="mt-85 banerimg-top  img-fluid" />
+                <img *ngIf="!centerData?.images[0]"
+                    src="../../../../../../assets/images/training-center-inner/hero-img.png" alt="banner-child"
+                    class="mt-85 banerimg-top  img-fluid" />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="first-top mg-top">
+    <div class="container text-center g-max-width-950" style="margin-bottom: 7rem;">
+        <div class="col-md-12">
+            <div class="row mt-5">
+                <div class="col-md-6 col-sm-6 mt-5 backImageBlue">
+                    <img *ngIf="centerData?.images[1]" [src]="getCourseImage(centerData.images[1])" alt="banner-child"
+                        class="mt-85 banerimg-top-about img-fluid" />
+                    <img *ngIf="!centerData?.images[1]" alt="About-img"
+                        src="../../../../../../assets/images/training-center-inner/about-us.png"
+                        class="img-fluid mt-5" />
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="text-left"><span class="about">About Us</span></div><br>
+                    <div class="left">
+                        <p>
+                            {{centerData?.about}}
+                        </p>
+                    </div>
+                    <!-- <div class="left">
+            <p>
+              The Robotics Classes at Mechatron
+              Robotics Wakad are usually conducted on Weekends and has a Student Teacher Ratio of 1:5. All the courses
+              are certified by AICRA. The center has trained some of the International students interested to learn the
+              science of Robotics.
+            </p>
+          </div> -->
+
+                    <!-- <div class="left">
+            <p>
+              The Centre is a perfect destination for students interested in building career in the
+              field of Robotics, IOT and AI. The trainers are well qualified Btech Electronics / Mechatronics Engineers
+              from one of the best institutes of Pune and participated in various robotics competitions.
+            </p>
+          </div> -->
+
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="first-top mg-top">
+    <div class="container" style="margin-bottom: 7rem;">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <div class="course-card-tag">
+                        <div class="card-body-height">
+                            <div class="grid-container mb-2">
+
+                                <div class="box-a" *ngIf="centerData?.contact?.name">
+                                    <ul class="social-link">
+                                        <a class="d-block" href="" target="">
+                                            <img
+                                                src="../../../../../../assets/images/training-center-inner/Contact-Person.png">
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="box-b" *ngIf="centerData?.contact?.name">
+                                    <p class="contactSmall">Contact Person</p>
+                                </div>
+
+                                <div class="box-c">
+                                    <p class="contactLarge">{{centerData?.contact?.name}} <a class="traineer personinfo"
+                                            *ngIf="centerData?.contact?.about" data-toggle="modal"
+                                            data-target="#exampleModalLong">(Know
+                                            more)</a> </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content mod widthm">
+                            <div class="modal-header deatils-center">
+                                <h5 class="modal-title fontfamily" id="exampleModalLongTitle"
+                                    style="color: #333333; font-size: 20px; font-weight: 700;">Know more
+                                    about me
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" style="font-size: 20px;">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img class="img-fluid shreya" src="{{centerData?.contact?.profile_pic}}"
+                                                width="78%" alt="none">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="modalp1" style="font-weight: 500; font-size: 16px;">
+                                                {{centerData?.contact?.about}}</p>
+                                            <!-- <p class="modalp1">
+                                    He has participated in many Robotics Competitions and has been
+                                    guiding the students to achieve the top ranks in Robotics
+                                    Competition. He has been the motivation of many students who wish to
+                                    develop skills in the field of Robotics & AI.</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="modal-footer deatils-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <!-- <div class="col-md-12">
+          <div class="course-card-tag">
+            <div class="card-body-height">
+              <div class="grid-container mb-2">
+
+                <div class="box-a">
+                  <ul class="social-link">
+                    <a class="d-block" href="" target="">
+                      <img src="../../../../../../assets/images/training-center-inner/About-the-person.png">
+                    </a>
+                  </ul>
+                </div>
+                <div class="box-b">
+                  <p class="contactSmall">About the person</p>
+                </div>
+
+                <div class="box-c">
+                  <p class="contactLarge">{{centerData?.contact?.about}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div> -->
+                <!--  -->
+                <div class="col-md-12">
+                    <div class="course-card-tag">
+                        <div class="card-body-height">
+                            <div class="grid-container mb-2">
+
+                                <div class="box-a">
+                                    <ul class="social-link">
+                                        <a class="d-block" href="" target="">
+                                            <img
+                                                src="../../../../../../assets/images/training-center-inner/E-mail-ID.png">
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="box-b">
+                                    <p class="contactSmall">E-mail ID</p>
+                                </div>
+
+                                <div class="box-c">
+                                    <p class="contactLarge">{{centerData?.email}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-md-12">
+                    <div class="course-card-tag">
+                        <div class="card-body-height">
+                            <div class="grid-container mb-2">
+
+                                <div class="box-a">
+                                    <ul class="social-link">
+                                        <a class="d-block" href="" target="">
+                                            <img
+                                                src="../../../../../../assets/images/training-center-inner/Contact-Number.png">
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="box-b">
+                                    <p class="contactSmall">Contact Number</p>
+                                </div>
+
+                                <div class="box-c">
+                                    <p class="contactLarge">{{centerData?.mobile}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-md-12">
+                    <div class="course-card-tag">
+                        <div class="card-body-height">
+                            <div class="grid-container mb-2">
+
+                                <div class="box-a">
+                                    <ul class="social-link">
+                                        <a class="d-block" href="{{centerData?.address?.map}}" target="_blank">
+                                            <img
+                                                src="../../../../../../assets/images/training-center-inner/Address.png">
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="box-b">
+                                    <p class="contactSmall">Address</p>
+                                </div>
+
+                                <div class="box-c">
+                                    <p class="contactLarge">{{centerData?.address?.addr1}}
+                                        {{centerData?.address?.addr2}}
+                                        {{centerData?.address?.area}} {{centerData?.address?.landmark}}
+                                        {{centerData?.address?.city}}
+                                        {{centerData?.address?.state}}
+                                        {{centerData?.address?.country}} {{centerData?.address?.pin}} <a
+                                            *ngIf="centerData.address.map" href="{{centerData?.address?.map}}"
+                                            style="font-size:18px;" target="_blank">(View Map)</a>
+                                    </p>
+                                    <!-- <a class="d-block" href="{{centerData?.address?.map}}" target="_blank"><p class="contactLarge" style="color:#2f5698;">View ON Google Map</p></a> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-6 backImageBlue">
+                <img *ngIf="centerData?.images[2]" [src]="getCourseImage(centerData.images[2])" alt="banner-child"
+                    class="mt-85 banerimg-top-deatils img-fluid" />
+                <img *ngIf="!centerData?.images[2]" alt="img"
+                    src="../../../../../../assets/images/training-center-inner/add-box-img.png"
+                    class="banerimg-top img-fluid" style="margin-top: 5rem;" />
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+<section class="first-top mg-top">
+    <div class="container container text-center g-max-width-950">
+        <h2>
+            <span class="lef"> Our Training Center</span>
+            <span style="color: #ff8500" class="lef"> Gallery </span>
+        </h2>
+    </div>
+    <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="carouselExampleIndicators_1" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators_1" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators_1" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators_1" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row slider-inner">
+
+                <div class="col-md-4 text-center">
+                  <img *ngIf="!centerData?.images[0]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-1.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[0]" [src]="getCourseImage(centerData.images[0])" alt="banner-child"
+                    class="mt-85 banerimg img-fluid scroll-img" />
+                </div>
+
+                <div class="col-md-4 text-center">
+                  <img *ngIf="!centerData?.images[1]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-2.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[1]" [src]="getCourseImage(centerData.images[1])" alt="banner-child"
+                    class="mt-85 banerimg scroll-img img-fluid" />
+                </div>
+
+                <div class="col-md-4 text-center">
+                  <img *ngIf="!centerData?.images[0]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-3.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[0]" [src]="getCourseImage(centerData.images[2])" alt="banner-child"
+                    class="mt-85 banerimg scroll-img img-fluid" />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row slider-inner">
+
+                <div class="col-md-4 text-center">
+                  <img *ngIf="!centerData?.images[3]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-3.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[3]" [src]="getCourseImage(centerData.images[3])" alt="banner-child"
+                    class="mt-85 banerimg scroll-img img-fluid" />
+                </div>
+
+                <div class="col-md-4 text-center">
+                  <img *ngIf="!centerData?.images[4]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-2.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[4]" [src]="getCourseImage(centerData.images[4])" alt="banner-child"
+                    class="mt-85 banerimg scroll-img img-fluid" />
+                </div>
+
+                <div class="col-md-4 text-center">
+
+                  <img *ngIf="!centerData?.images[5]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-1.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[5]" [src]="getCourseImage(centerData.images[5])" alt="banner-child"
+                    class="mt-85 banerimg img-fluid scroll-img" />
+                </div>
+
+
+
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row slider-inner">
+
+                <div class="col-md-4 text-center">
+                  <img *ngIf="!centerData?.images[6]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-3.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[6]" [src]="getCourseImage(centerData.images[6])" alt="banner-child"
+                    class="mt-85 banerimg img-fluid scroll-img" />
+                </div>
+
+                <div class="col-md-4 text-center">
+                  <img *ngIf="!centerData?.images[7]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-2.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[7]" [src]="getCourseImage(centerData.images[7])" alt="banner-child"
+                    class="mt-85 banerimg img-fluid scroll-img" />
+                </div>
+
+                <div class="col-md-4 text-center">
+
+                  <img *ngIf="!centerData?.images[8]" class="mt-85 banerimg img-fluid scroll-img"
+                    src="../../../../../../assets/images/training-center-inner/slider-img-1.png" alt="First slide" />
+                  <img *ngIf="centerData?.images[8]" [src]="getCourseImage(centerData.images[8])" alt="banner-child"
+                    class="mt-85 banerimg img-fluid scroll-img" />
+                </div>
+
+
+
+              </div>
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators_1" role="button" data-slide="prev"
+            style="left: -7em;width: 7rem;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators_1" role="button" data-slide="next" style="right: -7rem;
+          width: 7rem">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+    <div class="row">
+        <div class="slider">
+            <div class="slide-track">
+                <div class="hNBfER">
+                    <div class="infin-div left-right ">
+
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="centerData?.images[0]" [src]="getCourseImage(centerData.images[0])"
+                                        alt="banner-child" class="mt-85 banerimg img-fluid scroll-img" />
+                                    <img *ngIf="!centerData?.images[0]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-1.png"
+                                        alt="First slide" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[1]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-2.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[1]" [src]="getCourseImage(centerData.images[1])"
+                                        alt="banner-child" class="mt-85 banerimg scroll-img img-fluid" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[2]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-3.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[2]" [src]="getCourseImage(centerData.images[2])"
+                                        alt="banner-child" class="mt-85 banerimg scroll-img img-fluid" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[3]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-3.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[3]" [src]="getCourseImage(centerData.images[3])"
+                                        alt="banner-child" class="mt-85 banerimg scroll-img img-fluid" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[4]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-2.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[4]" [src]="getCourseImage(centerData.images[4])"
+                                        alt="banner-child" class="mt-85 banerimg scroll-img img-fluid" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[5]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-1.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[5]" [src]="getCourseImage(centerData.images[5])"
+                                        alt="banner-child" class="mt-85 banerimg img-fluid scroll-img" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[6]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-3.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[6]" [src]="getCourseImage(centerData.images[6])"
+                                        alt="banner-child" class="mt-85 banerimg img-fluid scroll-img" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[7]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-2.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[7]" [src]="getCourseImage(centerData.images[7])"
+                                        alt="banner-child" class="mt-85 banerimg img-fluid scroll-img" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gfDuKV">
+                            <div class="img-wrapper">
+                                <div class="students_Box">
+                                    <img *ngIf="!centerData?.images[8]" class="mt-85 banerimg img-fluid scroll-img"
+                                        src="../../../../../../assets/images/training-center-inner/slider-img-1.png"
+                                        alt="First slide" />
+                                    <img *ngIf="centerData?.images[8]" [src]="getCourseImage(centerData.images[8])"
+                                        alt="banner-child" class="mt-85 banerimg img-fluid scroll-img" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+<!--Students Projects  -->
+
+<section class="mg-top first-top">
+    <div class="container text-center" style="margin-top: 130px">
+        <h2 class="mt-5 mb-1">
+            <span class="lef"> Our Students</span>
+            <span style="color: #ff8500" class="lef"> Projects</span>
+        </h2>
+
+
+        <div class="row mt-3">
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="course-card">
+                    <div class="card-body">
+                        <a href="https://blog.mechatronrobotics.com/arduino-ir-remote-controlled-car/student-projects/">
+                            <img class="card-img-top img-fluid"
+                                src="../../../../../assets/images/students-projects/remote-controlled-Car-1.png"
+                                width="640" height="240" alt="Card image services" />
+                        </a>
+                        <div class="cardcolor mt-4">
+                            <div class="project-card-title text-left">
+                                <a class="proj-card-title"
+                                    href="https://blog.mechatronrobotics.com/arduino-ir-remote-controlled-car/student-projects/">
+                                    Arduino IR Remote Controlled Car
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bm-blog-post " style="margin-bottom: 15px">
+                            <span class="posted-on">
+                                <i class="fa fa-calendar" style="color: #ff8500;" aria-hidden="true"></i>
+                                <a href="" rel="bookmark" style="font-family: Roboto;font-size: 16px;">December 12,
+                                    2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="course-card">
+                    <div class="card-body">
+                        <a
+                            href="https://blog.mechatronrobotics.com/animation-studios-mechatron-robotics/student-projects/">
+                            <img class="card-img-top img-fluid"
+                                src="../../../../../assets/images/students-projects/Animation-Studio-1.png" width="640"
+                                height="240" alt="Card image services" />
+                        </a>
+                        <div class="cardcolor mt-4">
+                            <div class="project-card-title text-left">
+                                <a class="proj-card-title"
+                                    href="https://blog.mechatronrobotics.com/animation-studios-mechatron-robotics/student-projects/">Animation
+                                    Studios Mechatron Robotics</a>
+                            </div>
+                        </div>
+
+                        <div class="bm-blog-post " style="margin-bottom: 15px">
+                            <span class="posted-on">
+                                <i class="fa fa-calendar" style="color: #ff8500;" aria-hidden="true"></i>
+                                <a href="" rel="bookmark" style="font-family: Roboto;font-size: 16px;">December 12,
+                                    2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="course-card">
+                    <div class="card-body">
+                        <a href="https://blog.mechatronrobotics.com/home-automation-system/student-projects/">
+                            <img class="card-img-top img-fluid"
+                                src="../../../../../assets/images/students-projects/Home-Automation-System-2.png"
+                                width="640" height="240" alt="Card image services" />
+                        </a>
+                        <div class="cardcolor mt-4">
+                            <div class="project-card-title text-left">
+                                <a class="proj-card-title"
+                                    href="https://blog.mechatronrobotics.com/home-automation-system/student-projects/">Home
+                                    Automation
+                                    System</a>
+
+
+                            </div>
+                        </div>
+
+                        <div class="bm-blog-post " style="margin-bottom: 15px">
+                            <span class="posted-on">
+                                <i class="fa fa-calendar" style="color: #ff8500;" aria-hidden="true"></i>
+                                <a href="" rel="bookmark" style="font-family: Roboto;font-size: 16px;">December 12,
+                                    2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <div class="text-center mt-4">
+      <a href="https://blog.mechatronrobotics.com/student-projects/" target="blank">
+        <button type="button" class="my-btn-1 mt-3 mb-5">
+          VIEW ALL
+        </button>
+      </a>
+    </div> -->
+    </div>
+
+</section>
+
+<!-- Commits to Excellence - -->
+
+
+<section class="mg-top first-top certificate-bg" style="margin-top:5rem;">
+    <div class="container text-center" style="margin-bottom: 7rem;">
+        <div class="row" style="padding: 40px 0px 50px 0px">
+            <div class="col-md-7 col-sm-7 col-xs-7 mb-7">
+                <div class="row">
+                    <div class="col-md-9 col-sm-9 col-xs-9 mb-9 mt-3" align="left">
+                        <p style="line-height: 40px">
+                            <span class="lef">Commits to Excellence - <br /></span>
+                            <span class="lef">Global
+                                <span style="color: #ff8500" class="lef"> Accreditation </span>
+                            </span>
+                        </p>
+                        <p class="certificate-head">
+                            With STEM.org Accredited™ Experience Mechatron Robotics ensures
+                            quality education for its students.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 mb-3">
+                        <img src="../../../../../assets/images/logo.png" width="100%" height="auto" alt=""
+                            class="mt-4 logo" />
+                    </div>
+                </div>
+                <p class="certificate-para">
+                    Mechatron Robotics gets recognized as Internationally accredited body
+                    by STEM.org. We assure the quality education to strengthen and enhance
+                    the growth of students to rise and expand in future with practical
+                    exposure to students on technological aspects with right set of
+                    technical & non-technical skill set. STEM.org is one of the leading,
+                    valuable accreditation bodies of STEM in the International Community &
+                    provides the leading & most affordable STEM education credentialing
+                    pathway for educators.
+                </p>
+                <br />
+                <a href="https://www.credential.net/a31fbf73-0f40-43e9-b2ec-941ae49cabbb#gs.gv094a" target="blank"
+                    class="send-now">VIEW ACCREDITATION
+                </a>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5 mb-5 mt-2">
+                <img src="../../../../../assets/images/Group 440.png" width="100%" height="auto" alt="" class="mt-5" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Hear From Our Students -->
+<section class="mt-5" style="margin-top:5rem;">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container" style="margin-bottom: 7rem;">
+                    <div class="row hearBox mb-3" style="height: 37rem;">
+                        <div class="col-md-6 mt-5">
+
+                            <img src="../../../../../assets/images/training-center/New folder/Hear-From-Our-Student.png"
+                                class="img-fluid slide-img" style="" alt="Hear From Our Students" />
+                        </div>
+                        <div class="col-md-6 mt-5">
+
+                            <h2 class="text-left">
+                                <span style="color: #ff8500" class="lef">Hear</span>
+                                <span class="lef"> From Our </span>
+                                <span class="lef">Students</span>
+                            </h2>
+                            <div class="col-lg-12 p-0">
+                                <h1>
+                                    <p class="text-font-p">Take a look at what our students are saying about us</p>
+                                </h1>
+                            </div>
+
+
+
+                            <div class="text-font-pl mt-5 text-left">
+                                It's an amazing experience working at Mechatron Robotics, with such a friendly and
+                                positive atmosphere
+                                and
+                                opportunities to learn and grow at every phase of work. Best place for learners.
+                            </div>
+
+
+                            <div class="mt-5 text-font-name">
+                                <span>Tahreem Jamadar</span>
+                                <br>
+                                <span class="designation">Academic Counsellor </span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="container" style="margin-bottom: 7rem;">
+                    <div class="row hearBox mb-3" style="height: 37rem;">
+                        <div class="col-md-6 mt-5">
+
+                            <img src="../../../../../assets/images/training-center/New folder/Hear-From-Our-M.png"
+                                class="img-fluid slide-img" style="" alt="Hear From Our Students" />
+                        </div>
+                        <div class="col-md-6 mt-5">
+
+                            <h2 class="text-left">
+                                <span style="color: #ff8500" class="lef">Hear</span>
+                                <span class="lef"> From Our </span>
+                                <span class="lef">Students</span>
+                            </h2>
+                            <div class="col-lg-12 p-0">
+                                <h1>
+                                    <p class="text-font-p">Take a look at what our students are saying about us</p>
+                                </h1>
+                            </div>
+
+
+
+                            <div class="text-font-pl mt-5 text-left">
+                                It's an amazing experience working at Mechatron Robotics, with such a friendly and
+                                positive atmosphere
+                                and
+                                opportunities to learn and grow at every phase of work. Best place for learners.
+                            </div>
+
+
+                            <div class="mt-5 text-font-name">
+                                <span>Tahreem Jamadar</span>
+                                <br>
+                                <span class="designation">Academic Counsellor </span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"
+            style="width:6em">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"
+            style="width:6em">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+
+
+<!-- Mechatron Robotics In The News-->
+<div class=" mb-3">
+
+    <div class="container text-center g-max-width-950" style="margin-bottom: 7rem;">
+        <h2>
+            <span class="lef">Mechatron Robotics </span>
+            <span class="lef">In </span>
+            <!-- <span class="lef">The News</span> -->
+            <span class="lef" style="color: #ff8500"> The News</span>
+        </h2>
+        <br><br>
+
+        <div class="slider">
+            <div class="slide-track">
+
+                <div class="slide team-img">
+                    <a href="https://aninews.in/news/business/business/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students20211229181444/"
+                        target="_blank">
+                        <img src="public/assets/img/article/ANI.png" width="200" height="100" alt="ANI.png" />
+                    </a>
+                </div>
+
+                <div class="slide team-img">
+                    <a href="https://www.arabherald.com/news/272055700/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students"
+                        target="_blank">
+                        <img src="public/assets/img/article/australian-herald.png" width="200" height="100"
+                            alt="australian-herald.png" />
+                    </a>
+                </div>
+
+                <div class="slide team-img">
+                    <a href="https://www.business-standard.com/content/press-releases-ani/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students-121122901131_1.html#:~:text=Mechatron%20Robotics%20launches%20DIY%20robotic%20kits%2C%20project-based%20courses,students%20using%20project-based%20courses%20on%20Robotics%20and%20AI"
+                        target="_blank">
+                        <img src="public/assets/img/article/Business Standard.png" width="200" height="100"
+                            alt="Business Standard.png" />
+                    </a>
+                </div>
+
+                <div class="slide team-img">
+                    <a href="https://www.centralasiatimes.com/news/272055700/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students"
+                        target="_blank">
+                        <img src="public/assets/img/article/Central Asia Times.png" width="200" height="100"
+                            alt="Central Asia Times.png" />
+                    </a>
+                </div>
+                <div class="slide team-img">
+                    <a href="https://m.dailyhunt.in/news/india/english/ani67917250816496966-epaper-anieng/mechatron+robotics+launches+diy+robotic+kits+project+based+courses+to+develop+critical+thinking+and+problem+solving+skills+for+students-newsid-n345709184?listname=newspaperLanding&topic=business&index=11&topicIndex=4&mode=pwa&action=click"
+                        target="_blank"><img src="public/assets/img/article/DailyHunt.png" width="200" height="100"
+                            alt="DailyHunt.png" />
+                    </a>
+                </div>
+
+                <div class="slide team-img">
+                    <a href="https://www.hindustantimes.com/brand-post/mechatron-robotics-launches-robotic-kits-project-based-courses-for-students-101641210630654.html"
+                        target="_blank">
+                        <img src="public/assets/img/article/Hindustan Times.png" width="200" height="100"
+                            alt="Hindustan Times.png" />
+                    </a>
+                </div>
+
+                <div class="slide team-img">
+                    <a href="https://theprint.in/ani-press-releases/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students/790865/"
+                        target="_blank">
+                        <img src="public/assets/img/article/The Print.png" width="200" height="100"
+                            alt="The Print.png" />
+                    </a>
+                </div>
+                <div class="slide team-img">
+                    <a href="https://www.theuknews.com/news/272055700/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students"
+                        target="_blank">
+                        <img src="public/assets/img/article/the-uk-news.png" width="200" height="100"
+                            alt="the-uk-news.png" />
+                    </a>
+                </div>
+                <div class="slide team-img">
+                    <a href="https://www.worldnewsnetwork.net/news/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students20211229181442/"
+                        target="_blank">
+                        <img src="public/assets/img/article/world_news.png" width="200" height="100"
+                            alt="world_news.png" />
+                    </a>
+                </div>
+                <div class="slide team-img">
+                    <a href="https://www.zee5.com/articles/mechatron-robotics-launches-diy-robotic-kits-project-based-courses-to-develop-critical-thinking-and-problem-solving-skills-for-students"
+                        target="_blank">
+                        <img src="public/assets/img/article/Zee5.png" width="200" height="100" alt="Zee5.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- sign up to news letter -->
+
+<section class="" style="margin-bottom: 7rem;">
+    <div class="container" style="margin-top:7rem;">
+        <div class="row letterBox mb-5">
+            <div class="mt-4">
+                <p class="telegram"><i class="fab fa-telegram-plane" style="color: #f4f4f4;"></i> <span
+                        class="NewsletterText">Sign up to
+                        Newsletter</span></p>
+            </div>
+            <div class="mt-4">
+                <p class="NewsletterText" style="font-size: 1rem;">...and receive ₹199.00 coupon for first shopping</p>
+            </div>
+
+            <div class="mt-4">
+                <div class="search_wrap search_wrap_6">
+                    <div class="search_box">
+                        <input type="text" class="input" placeholder="Enter your email address">
+                        <div class="btn">
+                            <p style="margin-top: 0.1em;font-size: 16px;
+              font-weight: 700;">SIGN UP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

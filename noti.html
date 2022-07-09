@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="noti.css">
+</head>
+
+<body>
+    <ul class="navbar-nav my-lg-0">
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span *ngIf="currentUser">
+                    <h4 style="float:left; margin-top: 20px; margin-right: 15px; font-size: 18px !important;">
+                        {{currentUser?.name}}</h4>
+                </span>
+                <span *ngIf="!currentUser">
+                    <div class="u-img"> NA</div>
+                </span>
+                <span *ngIf="userDetailsProfile.profile_pic">
+                    <img src="{{userDetailsProfile.profile_pic}}" alt="user" class="img-circle" width="35px"
+                        height='35px' />
+                </span>
+                <span *ngIf="!userDetailsProfile.profile_pic">
+                    <span class="img-circle" style="font-size: 35px; color: #2F5698;"> <i class="fa fa-user"
+                            aria-hidden="true" style="position: relative"></i> </span>
+                </span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right ">
+                <ul class="dropdown-user">
+                    <li>
+                        <div class="dw-user-box">
+                            <!-- <ng-container *ngIf="!userDetails"> -->
+                            <span *ngIf="userDetailsProfile.profile_pic">
+                                <div class="u-img drop-dwn-img-v-centr" style="margin-top: 9%;"> <img
+                                        class="drop-down-img" src="{{userDetailsProfile.profile_pic}}"
+                                        alt="image not available"></div>
+                            </span>
+
+                            <div class="u-text">
+                                <h4 style="font-weight: bold; font-size: 18px;">{{currentUser?.name}}</h4>
+                                <h5 class="pt-1" style="font-size: 12px;">{{currentUser?.email}}</h5>
+                                <h5 style="cursor: pointer;font-size: 15px;" (click)="routeToViewContact()">
+                                    My Profile</h5>
+                                <!-- <h5 style="cursor: pointer;" (click)='onMyAccountSelect()'
+                      style="font-size: 15px; cursor: pointer"> My Account</h5> -->
+                                <h5 style="cursor: pointer;font-size: 15px;" (click)="openDialog()"> Change
+                                    Password</h5>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li style="cursor: pointer;">
+                        <a (click)="logout()">
+                            <i class="fal fa-power-off"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+    </ul>
+</body>
+
+</html>

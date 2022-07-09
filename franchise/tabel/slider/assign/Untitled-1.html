@@ -1,0 +1,39 @@
+<div class="form-group ">
+    <div class="col-xs-12">
+        <input class="form-control" formControlName="email" type="text" placeholder="Email">
+    </div>
+    <div class="error" *ngIf="submitted && f.email.errors?.required">
+        <small class="help-block"> Required </small>
+    </div>
+    <div class="error" *ngIf="submitted && !f.email.errors?.required && f.email.errors?.email">
+        <small class="help-block"> please enter correct email address </small>
+    </div>
+</div>
+
+
+
+<div class="form-group ">
+    <div class="col-xs-12">
+        <input class="form-control" formControlName="mobile" type="mobile" placeholder="Mobile">
+    </div>
+    <div class="error" *ngIf="submitted && f.mobile?.errors">
+        <small class="help-block"> Required </small>
+    </div>
+</div>
+
+
+<div class="form-group text-center p-b-20">
+    <div class="col-xs-12">
+        <button (click)="onSubmit()" [disabled]="submitted"
+            class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Sign
+            Up</button>
+    </div>
+</div>
+
+
+<div class="form-group m-b-0">
+    <div class="col-sm-12 text-center">
+        Already have an account? <a routerLink="/login" class="text-info m-l-5"><b>Sign
+                In</b></a>
+    </div>
+</div>

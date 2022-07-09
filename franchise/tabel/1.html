@@ -1,0 +1,92 @@
+<!-- I want to display the element name outside the table -->
+<div>Currently selecting</div>
+
+<div>
+    <button (click)="useForm.markAsPristine()"> Reset</button>
+</div>
+<hr>
+<div>
+    <button (click)="saveChanges()"> Save </button>
+</div>
+<form [formGroup]="useForm">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>Symbol Is Dirty</th>
+            <td mat-cell *matCellDef="let element; let index = index;">
+                <mat-label [innerHTML]="(useForm.get('elements').at(index).get('isCheck').dirty) ||
+              (useForm.get('elements').at(index).get('symbol').dirty)||
+              (useForm.get('elements').at(index).get('type').dirty)
+         ? 'Y' : ''">
+                    {{ element.position }}</mat-label>
+            </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">
+                <mat-label>{{ element.name }}</mat-label>
+            </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef>Weight</th>
+            <td mat-cell *matCellDef="let element">
+                <mat-label>{{ element.weight }}</mat-label>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef>Symbol</th>
+            <td mat-cell *matCellDef="let element; let index = index;" [formGroup]="useForm.get('elements').at(index)">
+                <input formControlName="symbol" placeholder="Enter Symbol">
+            </td>
+        </ng-container>
+
+        <!-- isChecked Column -->
+        <ng-container matColumnDef="isCheck">
+            <th mat-header-cell *matHeaderCellDef> is Checked?</th>
+            <td mat-cell *matCellDef="let element; let index = index;" [formGroup]="useForm.get('elements').at(index)">
+                <span>
+                    <mat-checkbox formControlName="isCheck" class="example-margin" [checked]="element.isCheck === true">
+                    </mat-checkbox>
+                </span>
+            </td>
+        </ng-container>
+
+        <!-- type Column -->
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element; let index = index;" [formGroup]="useForm.get('elements').at(index)">
+                <mat-select formControlName="type">
+                    <mat-option *ngFor=" let family of types" [value]="family">{{family}}</mat-option>
+
+                </mat-select>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</form>
+
+
+<!-- .............. -->
+<mat-form-field *ngIf="isCourse"
+    class='border-radius element-height background-fff float-right element-l-margin pt-21 pl-2 pr-1'
+    style="width: 125px;" floatLabel="never">
+    <mat-label>Select Batch</mat-label>
+    <mat-select name="batch" [(ngModel)]="selectedBatch" (ngModelChange)='onBatchChange($event)' disableOptionCentering
+        placeholder="Select Batch" panelClass='search-selectBox'>
+        <mat-option disabled class='sticky-option'> <input class='select-search-box' placeholder="Search batch"
+                (keyup)='filterBatch($event); $event.stopPropagation();' /> </mat-option>
+        <mat-option *ngFor="let batch of filtereDBatch" [value]="batch._id">
+            {{batch.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

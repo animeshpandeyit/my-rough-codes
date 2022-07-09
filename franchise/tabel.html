@@ -1,0 +1,108 @@
+l<app-loader *ngIf="loader"></app-loader>
+<div class="container-fluid">
+    <div class="row page-titles">
+        <div class="col-md-3 align-self-center">
+            <h3 class="text-themecolor">Assigned Students</h3>
+            <br>
+            <h3>Course : <span>Artificial Intelligence</span></h3>
+            <!-- <hr> -->
+        </div>
+        <!-- <hr> -->
+
+
+        <div class="col-md-12">
+            <hr>
+            <div class="input-group search-bar">
+                <input class="form-control search-bar  element-height" type="search"
+                    placeholder="Search Student here..." />
+                <div class="input-group-append">
+                    <span class="input-group-text search-icon"><i class="fas fa-search" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+
+                        <table mat-table [dataSource]="dataSource" matSort>
+
+                            <!-- Checkbox -->
+                            <ng-container matColumnDef="Checkbox">
+                                <th mat-header-cell *matHeaderCellDef>
+                                    <mat-checkbox name="select-all-checkbox">
+                                    </mat-checkbox>
+                                </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <mat-checkbox>
+                                    </mat-checkbox>
+                                </td>
+                            </ng-container>
+
+                            <!-- chapter -->
+                            <ng-container matColumnDef="chapter">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Chapter</th>
+                                <td mat-cell *matCellDef="let element"> </td>
+                            </ng-container>
+
+                            <!-- names -->
+                            <ng-container matColumnDef="names">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Student's Name</th>
+                                <td mat-cell *matCellDef="let element">
+                                    <mat-form-field
+                                        class="border-radius element-height background-fff float-right element-l-margin pt-21 pl-2 pr-1"
+                                        style="width: 125px">
+                                        <mat-select>
+                                            <mat-option [value]="0"> Availability </mat-option>
+                                            <mat-option value="null"> Publish
+                                            </mat-option>
+                                            <mat-option value="null"> Unpublish
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                            </ng-container>
+
+                            <!-- count -->
+                            <ng-container matColumnDef="count">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Count</th>
+                                <td mat-cell *matCellDef="let element">
+                                    <i [matMenuTriggerFor]="menu" class="fa fa-ellipsis-h" aria-hidden="true"
+                                        style="font-size: 18px; cursor: pointer"></i>
+                                </td>
+                            </ng-container>
+
+
+                            <!-- report -->
+                            <ng-container matColumnDef="report">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Report</th>
+                                <td mat-cell *matCellDef="let element">
+                                    <i [matMenuTriggerFor]="menu" class="fa fa-ellipsis-h" aria-hidden="true"
+                                        style="font-size: 18px; cursor: pointer"></i>
+                                </td>
+                            </ng-container>
+
+
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item> <i class="fa fa-pencil" aria-hidden="true"></i> <span
+                                        class='menu-option'>Edit</span> </button>
+                                <button mat-menu-item> <i class="fa fa-trash-o" aria-hidden="true"></i> <span
+                                        class='menu-option'>
+                                        Delete </span> </button>
+                            </mat-menu>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns sticky:true"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <ngb-pagination style="float: right; padding-top: 5px;" [maxSize]="4"
+                        [collectionSize]="allCategoriesResponse.totalDocs" [(page)]="allCategoriesResponse.page"
+                        [pageSize]="allCategoriesResponse.limit">
+                    </ngb-pagination>
+                </div>
+            </div>
+        </div>

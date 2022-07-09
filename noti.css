@@ -1,0 +1,397 @@
+.margin-logo {
+  margin-top: 86px;
+}
+
+.myaccordion {
+  max-width: 500px;
+  margin: 50px auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.myaccordion .card,
+.myaccordion .card:last-child .card-header {
+  border: none;
+}
+
+.myaccordion .card-header {
+  border-bottom-color: #edeff0;
+  background: transparent;
+}
+
+.myaccordion .fa-stack {
+  font-size: 18px;
+}
+
+.myaccordion .btn {
+  width: 100%;
+  font-weight: bold;
+  color: #004987;
+  padding: 0;
+}
+
+.myaccordion .btn-link:hover,
+.myaccordion .btn-link:focus {
+  text-decoration: none;
+}
+
+.myaccordion li + li {
+  margin-top: 10px;
+}
+
+/* i {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke : black;
+  } */
+/*
+  Template Name: Admin Pro Admin
+  Author: Wrappixel
+  Email: niravjoshi87@gmail.com
+  File: scss
+  */
+
+/*
+  Template Name: Admin Pro Admin
+  Author: Wrappixel
+  Email: niravjoshi87@gmail.com
+  File: scss
+  */
+
+/*Theme Colors*/
+
+/*bootstrap Color*/
+
+/*Light colors*/
+
+/*Normal Color*/
+
+/*Extra Variable*/
+
+/*******************
+  /*Top bar
+  *******************/
+
+a:hover {
+  text-decoration: none;
+}
+
+.topbar {
+  background: #fff;
+}
+
+.topbar .top-navbar .navbar-header .navbar-brand .light-logo {
+  display: none;
+}
+
+.topbar .top-navbar .navbar-nav > .nav-item > span {
+  color: #398bf7;
+}
+
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+  color: #a6b7bf;
+}
+
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover,
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
+  color: #242a33 !important;
+}
+
+.logo-center .topbar .navbar-header {
+  text-align: center;
+  padding-left: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.logo-center .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {
+  display: none;
+}
+
+.logo-center .topbar .top-navbar .navbar-header .navbar-brand .light-logo {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*******************
+  /*General Elements
+  *******************/
+
+a {
+  color: #398bf7;
+}
+
+a.link:hover,
+a.link:focus {
+  color: #398bf7 !important;
+}
+
+.bg-theme {
+  background-color: #398bf7 !important;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #398bf7;
+  border-color: #398bf7;
+}
+
+.right-sidebar .rpanel-title {
+  background: #398bf7;
+}
+
+.stylish-table tbody tr:hover,
+.stylish-table tbody tr.active {
+  border-left: 4px solid #398bf7;
+}
+
+.text-themecolor {
+  color: #398bf7 !important;
+}
+
+.profile-tab li a.nav-link.active,
+.customtab li a.nav-link.active {
+  border-bottom: 2px solid #398bf7;
+  color: #398bf7;
+}
+
+.profile-tab li a.nav-link:hover,
+.customtab li a.nav-link:hover {
+  color: #398bf7;
+}
+
+/*******************
+  /*Buttons
+  *******************/
+
+.btn-themecolor,
+.btn-themecolor.disabled {
+  background: #398bf7;
+  color: #ffffff;
+  border: 1px solid #398bf7;
+}
+
+.btn-themecolor:hover,
+.btn-themecolor.disabled:hover {
+  background: #398bf7;
+  opacity: 0.7;
+  border: 1px solid #398bf7;
+}
+
+.btn-themecolor.active,
+.btn-themecolor:focus,
+.btn-themecolor.disabled.active,
+.btn-themecolor.disabled:focus {
+  background: #028ee1;
+}
+
+/*******************
+  /*sidebar navigation
+  *******************/
+
+.card-no-border .left-sidebar,
+.card-no-border .sidebar-nav {
+  background: #242a33;
+}
+
+.mini-sidebar .sidebar-nav {
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  .mini-sidebar .sidebar-nav #sidebarnav > li > ul {
+    background: #1c2128;
+  }
+}
+
+.sidebar-nav {
+  background: #fff;
+}
+
+.user-profile .profile-text a {
+  color: #687384 !important;
+}
+
+.card-no-border .sidebar-footer {
+  background: #1c2128;
+}
+
+.label-themecolor {
+  background: #398bf7;
+}
+
+.sidebar-nav ul li a {
+  color: black;
+}
+
+.sidebar-nav ul li.active a {
+  color: #2f5698 !important;
+  background: #eaf0fb;
+}
+
+.sidebar-nav > ul > li.active > a {
+  color: #2f5698 !important;
+  border-color: #398bf7;
+}
+
+.sidebar-nav > ul > li.active > a i {
+  color: #2f5698 !important;
+  /* background: #EAF0FB; */
+}
+
+.sidebar-nav ul li a.active,
+.sidebar-nav ul li a:hover {
+  color: #2f5698;
+  background: #eaf0fb;
+}
+
+.sidebar-nav ul li a.active i,
+.sidebar-nav ul li a:hover i {
+  color: #2f5698;
+}
+
+.sidebar-nav ul li.nav-small-cap {
+  color: #687384;
+}
+
+@media (min-width: 768px) {
+  .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a {
+    background: #1c2128;
+  }
+}
+
+.fix-sidebar.left-sidebar {
+  position: fixed;
+  background: #242a33;
+  margin-top: 86px;
+}
+
+.dark-logo {
+  width: 100px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.topbar {
+  border-bottom: 1px solid #d7d7d7;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.active {
+  color: #ffffff;
+}
+
+.custom-menu {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+/* .custom-menu .mat-drawer {
+    position: relative
+  } */
+
+.page-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.body-bg {
+  background-color: #faf9f8;
+  /* background-color: #ad6925; */
+}
+/******* changes icons font size*****/
+/* .fa-user-circle:before {
+    content: "\f2bd";
+    font-size: 23px;
+  } */
+/* Let's get this party started */
+/* ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #a8a8a8;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+  background:#a8a8a8;
+  } */
+::ng-deep .mat-tooltip {
+  padding: 7px 7px 7px 7px;
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  background-color: #36454f !important;
+  color: #fff !important;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+}
+
+/* Style 1 */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 0.45em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d7dadc;
+  border-radius: 6px;
+  /* border: 6px solid transparent; */
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d7dadc;
+}
+
+/*  */
+label #sidebar_btn {
+  z-index: 1;
+  color: #fff;
+  position: fixed;
+  cursor: pointer;
+  left: 300px;
+  font-size: 20px;
+  margin: 5px 0;
+}
+label #sidebar_btn:hover {
+  color: #19b3d3;
+}
+
+/*  */
+.mat-sidenav-container {
+  height: 100%;
+}
+/* .mat-sidenav,
+  mat-sidenav-content {
+    padding: 1em;
+  } */
+
+/* --------------------------------------------- */
+mat-sidenav:not(.mat-drawer-opened) {
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+  width: 60px !important;
+  overflow: hidden;
+}
+mat-sidenav:not(.mat-drawer-opened) .hide-menu {
+  display: none !important;
+}
+
+/* -------------------------------------------------------- */

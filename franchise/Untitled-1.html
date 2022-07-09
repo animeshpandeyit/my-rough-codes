@@ -1,0 +1,42 @@
+<div class="dropdown-menu dropdown-menu-width  dropdown-menu-right right_arrow">
+    <ul class="dropdown-user">
+        <li>
+            <div class="dw-user-box">
+                <div class="row">
+                    <div class="col-md-6  text-left">
+                        <h4 class="notifyHeader-Black">Notification Panel</h4>
+                    </div>
+                    <div class="col-md-6 notifyHeader text-right">
+                        <h4 class="notifyHeader-Blue">Mark all as read</h4>
+                    </div>
+                </div>
+                <span *ngFor="let notifi of allNotification; let i = index">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-11 notificationsPara xt-left">
+                                <span class="course-mat-menu-icon">
+                                    <i [matMenuTriggerFor]="menu" class="fas fa-ellipsis-h" aria-hidden="true"
+                                        style="font-size: 25px; cursor: pointer;color: #67757C ;"></i>
+                                </span>
+                                <!-- mat menu -->
+                                <mat-menu #menu="matMenu" class="topbar-mat-menu">
+                                    <button mat-menu-item (click)="goToAttendancePage(course)" class="link-btn">
+                                        <i class="fal fa-clipboard-user matmenu"></i>
+                                        <span class="menu-items mat-menu-text matmenu">Attendance</span>
+                                    </button>
+                                    <button mat-menu-item (click)="goToGardePage(course)" class="link-btn">
+                                        <i class="fal fa-file-certificate matmenu"></i>
+                                        <span class="menu-items mat-menu-text matmenu">Performance</span>
+                                    </button>
+                                </mat-menu>
+                                <p class="desc">{{notifi.desc}}</p>
+                                <p class="not-footer"><i class="far fa-history"></i>&nbsp; {{notifi.created_at | date :
+                                    'MMM d, y, h:mm:ss a'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>
